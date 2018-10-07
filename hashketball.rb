@@ -122,7 +122,6 @@ def num_points_scored(name)
     value.each do |k, v|
       if k == "players"
         k.each do |n, a|
-          binding.pry
           if n == name
             a
           end
