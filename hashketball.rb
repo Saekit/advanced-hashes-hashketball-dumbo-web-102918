@@ -118,16 +118,11 @@ def game_hash
 end
 
 def num_points_scored(name)
-  hash.each do |key, value|
-    value.each do |k, v|
-      if k == "players"
-        k.each do |n, a|
-          if n == name
-            a
-          end
-        end
+  game_hash.each do |team, team_data|
+    team_data[:players].each do |player|
+      if player[:name] == name
+        return player[:points]
       end
     end
   end
 end
-num_points_scored("Brendan Haywood")
